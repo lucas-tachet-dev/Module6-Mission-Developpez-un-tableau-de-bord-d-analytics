@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { loginUser } from "../../../data/authService";
-import "./login.css"
+import styles from "./login.module.css"
 import { useNavigate } from "react-router-dom";
 
 function Login({ onLogin }) {
@@ -22,17 +22,17 @@ function Login({ onLogin }) {
     }
     
     return(
-            <main>
-                <section className="sectionContainer">
+            <main className={styles.mainLogin}>
+                <section className={styles.sectionContainer}>
                     <img 
                         src="./public/logo.png"
                         alt="Logo Sportsee"
-                        className="logoLogin"/>
-                    <div className="loginContainer">
+                        />
+                    <div className={styles.loginContainer}>
                         <h1>Transformez<br />vos stats en résultats</h1>
                         <h2>Se connecter</h2>
-                        <form onSubmit={handleSubmit} className="formContainer">
-                            <div className="inputContainer">
+                        <form onSubmit={handleSubmit} className={styles.formContainer}>
+                            <div className={styles.inputContainer}>
                                 <label htmlFor="user">Nom d'utilisateur</label>
                                 <input 
                                     type="text" 
@@ -40,14 +40,14 @@ function Login({ onLogin }) {
                                     onChange={(e) => setUsername(e.target.value)}
                                     required />
                             </div>
-                            <div className="inputContainer">
+                            <div className={styles.inputContainer}>
                                 <label htmlFor="password">Mot de passe</label>
                                 <input type="password" 
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required />
                             </div>
-                            <button type="submit" className="loginButton">Se connecter</button>
+                            <button type="submit" className={styles.loginButton}>Se connecter</button>
                         </form>
                         <p>Mot de passe oublié ?</p>
                     </div>

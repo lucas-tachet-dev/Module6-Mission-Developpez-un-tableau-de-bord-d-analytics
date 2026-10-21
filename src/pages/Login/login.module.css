@@ -1,15 +1,8 @@
-main {
+.mainLogin {
     display: flex;
     background-image: url("/Background_picture.png");
     background-size: cover;
     background-position: right;
-}
-
-.logoLogin {
-    height: 24px;
-    width: 157px;
-    margin-left: 130px;
-    padding-top: 40px;
 }
 
 .sectionContainer{
@@ -18,7 +11,12 @@ main {
     height: 100vh;
     display: flex;
     flex-direction: column;
-
+    & img {
+        height: 24px;
+        width: 157px;
+        margin-left: 130px;
+        padding-top: 40px;
+    }
 }
 
 .loginContainer {
