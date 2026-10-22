@@ -2,22 +2,23 @@ import { useState } from "react";
 import { loginUser } from "../../../data/authService";
 import styles from "./login.module.css"
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../../context/UserContext";
 
-function Login({ onLogin }) {
+function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const { login } = useUser();
+
     const navigate = useNavigate();
     //fonction de gestion du form login
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await loginUser(username, password);
-            console.log(response);
-            onLogin(response.token);
+        const response = await login(username, password);
+
+        if (response) {
             navigate("/dashboard", {replace : true})
-        } catch (error) {
-            console.log(error)
         }
     }
     

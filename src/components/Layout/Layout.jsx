@@ -4,11 +4,11 @@ import styles from './Layout.module.css';
 import Footer from '../Footer/Footer';
 
 
-export default function Layout({ onLogout }) {
+export default function Layout() {
 
   return (
     <>
-      <Header onLogout={onLogout}/>
+      <Header />
       <main>
         <Outlet />
       </main>
