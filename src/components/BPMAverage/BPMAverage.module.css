@@ -1,0 +1,39 @@
+.container {
+    background-color: white;
+    padding: 30px 60px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    & h3 {
+        font-size: 22px;
+        color: #F4320B;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    & p {
+        margin: 0;
+    }
+
+    & .navigation {
+        display: flex;
+        font-size: 12px;
+        gap: 6px;
+        align-items: center;
+
+        & button {
+            background-color: white;
+            border: 1px solid grey;
+            border-radius: 10px;
+            margin: auto;
+            padding: 6px 8px;
+        }
+    }
+}
