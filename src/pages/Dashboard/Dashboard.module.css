@@ -1,4 +1,64 @@
 .container {
     margin: 0px 52px;
     flex: 1;
+
+    & section {
+        margin-bottom: 80px;
+    }
+
+    & h2 {
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    & p {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--secondary-typo);
+    }
+}
+
+.chartsContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.currentWeekContainer {
+    display: flex;
+    gap: 20px;
+
+    
+    & .weekStats {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        
+        & div {
+            background-color: white;
+            padding: 16px 32px;
+            border-radius: 10px;
+
+            & h4 {
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--secondary-typo);
+            }
+        }
+
+        & .weekDuration {
+            & p {
+                color: var(--primary-color);
+                font-size: 22px;
+            }
+        }
+
+        & .weekDistance {
+            & p {
+                color: #F4320B;
+                font-size: 22px;
+            }
+        }
+
+    }
 }
