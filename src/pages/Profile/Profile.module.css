@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.userSection {
+    width: 45%;
+    margin-bottom: 160px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userInfos {
+    background-color: white;
+    padding: 20px 60px;
+    border-radius: 10px;
+}
+
+.yourProfile {
+    background-color: white;
+    padding: 20px 60px 50px 60px;
+    border-radius: 10px;
+
+    & h2 {
+        margin-bottom: 36px;
+        padding-bottom: 36px;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        font-weight: 500;
+        font-size: 22px;
+    }
+
+    & p {
+        color: var(--secondary-typo);
+        padding-bottom: 16px;
+    }
+}
+
+.statsSection {
+    width: 50%;
+
+    & h2 {
+        margin-bottom: 4px;
+    }
+
+    & p {
+        color: var(--secondary-typo);
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 0px;
+        margin-bottom: 36px;
+    }
+}
+
+.statsDash {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 19px;
+}
+
+.statsBox {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    & h3 {
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    & p {
+        color: white;
+        font-size: 22px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+}
