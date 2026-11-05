@@ -8,26 +8,6 @@
     align-items: center;
 }
 
-.profileContainer {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.profileInfo {
-    & h1 {
-        font-size: 22px;
-        font-weight: 500;
-        margin: 0;
-    }
-    & p {
-        font-size: 14px;
-        font-weight: 400;
-        color: var(--secondary-typo);
-        margin: 0;
-    }
-}
-
 .distanceContainer {
     display: flex;
     align-items: center;
