@@ -1,4 +1,4 @@
-import { Children, createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { loginUser } from '../../data/authService';
 
 const UserContext = createContext();
@@ -15,17 +15,20 @@ export default function UserProvider({ children }) {
   })
 
   const [isAuth, setIsAuth] = useState(() => {
-    const user = localStorage.getItem('user');
-    return user ? true : false;
+    const auth = localStorage.getItem('user');
+    return auth ? true : false;
   })
 
   const login = async (username, password)=> {
       try {
           const response = await loginUser(username, password);
 
-          setIsAuth(response.user);
+          setUser(response.user);
           setIsAuth(true);
-          localStorage.setItem('user', JSON.stringify(response));
+
+          localStorage.setItem('user', JSON.stringify(response.user));
+
+          localStorage.setItem('token', response.token)
       } catch (error) {
           console.log(error)
       }
