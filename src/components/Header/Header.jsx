@@ -13,8 +13,8 @@ export default function Header() {
         alt="Logo Sportsee"/>
         <nav>
           <div className="nav-bar">
-          <NavLink NavLink to="/dashboard" className="nav-link">Dashboard</NavLink>
-          <NavLink NavLink to="/profile" className="nav-link">Mon profil</NavLink>
+            <NavLink NavLink to="/dashboard" className="nav-link">Dashboard</NavLink>
+            <NavLink NavLink to="/profile" className="nav-link">Mon profil</NavLink>
           </div>
           <NavLink NavLink to="/" className="nav-link logout" onClick={logout}>Se déconnecter</NavLink>
         </nav>
