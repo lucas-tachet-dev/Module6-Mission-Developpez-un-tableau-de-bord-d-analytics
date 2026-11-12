@@ -12,7 +12,7 @@ export default function Dashboard() {
 
     const currentWeek = displayCurrentWeekString();
 
-    const { totalDistance, totalDuration } = getCurrentWeekStats(user.runningData)
+    const { totalDistance, totalDuration } = user.statistics;
 
     return(
         <div className={styles.container}>

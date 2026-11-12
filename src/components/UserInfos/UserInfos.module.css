@@ -17,3 +17,10 @@
         margin: 0;
     }
 }
+
+.picture {
+    height: 117px;
+    width: 104px;
+    object-fit: cover;
+    border-radius: 10px;
+}

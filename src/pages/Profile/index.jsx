@@ -7,7 +7,7 @@ export default function Profile() {
 
   const { user } = useUser();
 
-  const infos = user.userInfos;
+  const infos = user.profile;
 
   const formatHeight = (height) => {
     const meters = Math.floor(height / 100);
@@ -27,7 +27,7 @@ export default function Profile() {
           <div className={styles.yourProfile}>
             <h2>Votre profil</h2>
             <p>Âge : {infos.age}</p>
-            <p>Genre : {infos.gender === "female" ? "femme" : "homme"}</p>
+            <p>Genre : {infos.gender === "female" ? "Femme" : "Femme"}</p>
             <p>Taille : {formatHeight(infos.height)}</p>
             <p>Poids : {infos.weight}kg</p>
           </div>
@@ -39,7 +39,7 @@ export default function Profile() {
         <div className={styles.statsDash}>
           <div className={styles.statsBox}>
             <h3>Temps total couru</h3>
-            <p>{userStats.totalDuration} h</p>
+            <p>{user.statistics.totalDuration} h</p>
           </div>
           <div className={styles.statsBox}>
             <h3>Calories brûlées</h3>
@@ -47,7 +47,7 @@ export default function Profile() {
           </div>
           <div className={styles.statsBox}>
             <h3>Distance totale parcourue</h3>
-            <p>{userStats.totalDistance} km</p>
+            <p>{user.statistics.totalDistance} km</p>
           </div>
           <div className={styles.statsBox}>
             <h3>Nombre de jours de repos</h3>
@@ -55,7 +55,7 @@ export default function Profile() {
           </div>
           <div className={styles.statsBox}>
             <h3>Nombre de sessions</h3>
-            <p>{userStats.totalSessions}</p>
+            <p>{user.statistics.totalSessions}</p>
           </div>
         </div>
       </section>

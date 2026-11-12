@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { loginUser } from "../../../data/authService";
 import styles from "./login.module.css"
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
@@ -11,14 +10,16 @@ function Login() {
     const { login } = useUser();
 
     const navigate = useNavigate();
+    
     //fonction de gestion du form login
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await login(username, password);
-
-        if (response) {
+        try {
+            await login(username, password);
             navigate("/dashboard", {replace : true})
+        } catch (error) {
+            console.error("erreur de co", error)
         }
     }
     

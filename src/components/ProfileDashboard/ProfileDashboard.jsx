@@ -7,7 +7,7 @@ export default function ProfileDashboard() {
 
   const { user } = useUser();
 
-  const totalDistance = calculateTotalDistance(user.runningData ,user.userInfos.createdAt);
+  const totalDistance = user.statistics.totalDistance;
 
   return (
     <div className={styles.container}>

@@ -12,7 +12,7 @@ export default function BPMAverage() {
 
   const { chartData, globalDateRange, averageBPM } = getWeekBPMData(user.runningData, weekOffset);
 
-  const hasPrevious = canGoPreviousWeeks(user.userInfos.createdAt, weekOffset, "week");
+  const hasPrevious = canGoPreviousWeeks(user.profile.createdAt, weekOffset, "week");
 
   const handlePreviousWeeks = () => {
     if(hasPrevious) {

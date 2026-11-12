@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import {  } from '../../data/authService';
 import { loginUser, fetchWithAuth } from '../services/api';
 import { DateTime } from 'luxon';
 
@@ -12,6 +11,7 @@ export default function UserProvider({ children }) {
     if (currentUser) {
       return JSON.parse(currentUser);
     } else {
+      localStorage.removeItem('user');
       return null;
     }
   })
@@ -30,12 +30,11 @@ export default function UserProvider({ children }) {
     const now = DateTime.now().toISODate();
     const creationDate = infos.profile.createdAt;
     
-    const image = await fetchWithAuth(`/images/${profilePic}`, token);
     const activity = await fetchWithAuth(`/user-activity?startWeek=${creationDate}&endWeek=${now}`, token);
 
     const fullUserData = {
       ...infos,
-      image: image,
+      image: profilePic,
       runningData: activity
     };
 

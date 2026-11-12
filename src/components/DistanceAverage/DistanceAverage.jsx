@@ -12,7 +12,7 @@ export default function DistanceAverage() {
   
   const { chartData, globalDateRange, averageDistance } = getFourWeeksChartData(user.runningData, weekOffset);
 
-  const hasPrevious = canGoPreviousWeeks(user.userInfos.createdAt, weekOffset, "");
+  const hasPrevious = canGoPreviousWeeks(user.profile.createdAt, weekOffset, "");
 
   const handlePreviousWeeks = () => {
     if(hasPrevious) {
