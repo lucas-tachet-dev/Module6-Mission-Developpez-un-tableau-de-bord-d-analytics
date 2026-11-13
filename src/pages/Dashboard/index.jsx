@@ -11,8 +11,7 @@ export default function Dashboard() {
     const { user } = useUser();
 
     const currentWeek = displayCurrentWeekString();
-
-    const { totalDistance, totalDuration } = user.statistics;
+    const { weekDistance, weekDuration } = getCurrentWeekStats(user.runningData)
 
     return(
         <div className={styles.container}>
@@ -32,11 +31,11 @@ export default function Dashboard() {
                     <div className={styles.weekStats}>
                         <div className={styles.weekDuration}>
                             <h4>Durée d'activité</h4>
-                            <p>{totalDuration} minutes</p>
+                            <p>{weekDuration} minutes</p>
                         </div>
                         <div className={styles.weekDistance}>
                             <h4>Distance</h4>
-                            <p>{totalDistance} kilomètres</p>
+                            <p>{weekDistance} kilomètres</p>
                         </div>
                     </div>
                 </div>

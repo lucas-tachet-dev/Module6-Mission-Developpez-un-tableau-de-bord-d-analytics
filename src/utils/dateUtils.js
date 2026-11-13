@@ -64,7 +64,7 @@ export function getAllStats(runningData, createdAt) {
 
 // récup des stats de la semaine actuelle
 export function getCurrentWeekStats(runningData) {
-    if(!runningData) return {totalDistance: 0, totalDuration: 0, sessionsCount: 0}
+    if(!runningData) return {weekDistance: 0, weekDuration: 0, sessionsCount: 0}
 
     const now = DateTime.now();
     const startOfWeek = now.startOf('week');
@@ -75,12 +75,12 @@ export function getCurrentWeekStats(runningData) {
         return runDate >= startOfWeek && runDate <= endOfWeek;
     })
 
-    const totalDistance = currentWeekRuns.reduce((total, run) => total + run.distance, 0);
-    const totalDuration = currentWeekRuns.reduce((total, run) => total + run.duration, 0);
+    const weekDistance = currentWeekRuns.reduce((total, run) => total + run.distance, 0);
+    const weekDuration = currentWeekRuns.reduce((total, run) => total + run.duration, 0);
 
     return {
-        totalDistance,
-        totalDuration,
+        weekDistance,
+        weekDuration,
         sessionsCount: currentWeekRuns.length
     }
 }
